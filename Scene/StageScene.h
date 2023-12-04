@@ -1,8 +1,8 @@
 #pragma once
 #include "IScene.h"
 #include"Manager/InputManager.h"
-#include"InputHandler.h"
-#include"Command.h"
+#include"Input/InputHandler.h"
+#include"Input/Command.h"
 #include"Vector2.h"
 #include"Object/Player.h"
 #include"Object/Enemy.h"
