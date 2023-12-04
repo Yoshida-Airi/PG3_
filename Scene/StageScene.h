@@ -1,6 +1,8 @@
 #pragma once
 #include "IScene.h"
 #include"Manager/InputManager.h"
+#include"InputHandler.h"
+#include"Command.h"
 #include"Vector2.h"
 #include"Object/Player.h"
 #include"Object/Enemy.h"
@@ -14,8 +16,9 @@ public:
 	void Draw() override;
 
 private:
-	InputManager* inputManager;
+	InputManager* inputManager = nullptr;
+	InputHandler* inputHandler_ = nullptr;
+	Command* commad_ = nullptr;
 	Player* player;
-	Enemy* enemy;
-
+	
 };

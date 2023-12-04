@@ -4,42 +4,14 @@ void Player::Initialize()
 {
 	inputManager_ = InputManager::GetInstance();
 	player = {500, 500, 30};
+	speed_ = 3.0f;
 	bullet = {0, 0, 10};
 	isAttack = false;
 }
 
 void Player::Update()
 {
-	// プレイヤーの移動
-	if (inputManager_->IsKeyPressed(DIK_W)) {
-		player.position.y -= 3.0f;
-	}
-	if (inputManager_->IsKeyPressed(DIK_S)) {
-		player.position.y += 3.0f;
-	}
-	if (inputManager_->IsKeyPressed(DIK_A)) {
-		player.position.x -= 3.0f;
-	}
-	if (inputManager_->IsKeyPressed(DIK_D)) {
-		player.position.x += 3.0f;
-	}
-
-	if (isAttack == false) {
-		if (inputManager_->IsKeyTrriger(DIK_RETURN)) {
-			bullet.position = player.position;
-			isAttack = true;
-		}
-	}
-
-	if (isAttack == true)
-	{
-		bullet.position.y -= 6.0f;
-	}
-
-	if (bullet.position.y <= -30) {
-		isAttack = false;
-	}
-
+	
 }
 
 void Player::Draw() 
@@ -62,5 +34,11 @@ Object Player::GetBullet() {
 	result = bullet;
 	return result;
 }
+
+void Player::MoveRight() 
+{ player.position.x += speed_; }
+
+void Player::MoveLeft() 
+{ player.position.x -= speed_; }
 
 

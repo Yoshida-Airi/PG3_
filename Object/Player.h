@@ -15,10 +15,15 @@ public:
 
 	Object GetBullet();
 
+	void MoveRight();
+	void MoveLeft();
+
 private:
 	InputManager* inputManager_;
 	Object player;
 	Object bullet;
+
+	float speed_;
 
 	bool isAttack;
 };

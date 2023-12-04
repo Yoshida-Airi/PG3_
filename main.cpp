@@ -1,5 +1,6 @@
 #include <Novice.h>
 #include"Manager/GameManager.h"
+#include"Scene/StageScene.h"
 
 const char kWindowTitle[] = "学籍番号";
 
